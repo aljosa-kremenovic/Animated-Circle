@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <h2 class="text">Krug</h2>
+    </section>
+
+    <script>
+        //now, split text in letters
+
+        const text = document.querySelector('.text');
+        text.innerHTML = text.textContent.replace(/\S/g,"<span>$&</span>");
+
+        
+        const element = document.querySelectorAll('span');
+        for(let i = 0; i<element.length; i++){
+            element[i].style.transform = "rotate("+i*18+"deg)"
+        }
+
+        document.addEventListener("mousemove", function(e)
+        {
+            text.style.left = e.pageX + 'px';
+            text.style.top = e.pageY + 'px';
+        })
+    </script>
+</body>
+</html>
